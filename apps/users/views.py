@@ -1,8 +1,5 @@
-from rest_framework.generics import RetrieveUpdateAPIView
-from .models import User
-from .serializers import UserProfileSerializer
+from rest_framework import generics
+from .serializers import RegisterSerializer
 
-class ProfileView(RetrieveUpdateAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserProfileSerializer
-    lookup_field = "username"
+class RegisterView(generics.CreateAPIView):
+    serializer_class = RegisterSerializer

@@ -1,3 +1,15 @@
-# Bloggy_Startup
+# Bloggy Backend
 
-A Django-based blogging platform with authentication, posts, and REST API.
+## Features
+- JWT Authentication
+- Social Feed (Posts, Likes, Comments)
+- Groups (Teams)
+- Portfolio Builder
+- PostgreSQL
+
+## Setup
+```bash
+git clone ...
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver

@@ -9,8 +9,17 @@ urlpatterns = [
     # Optional UI:
     path('', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
 
-    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('api/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 
-    path('api/v1/', include('apps.urls'))
+    path('api/v1/', include('apps.urls')),
+    path('api/users/', include('apps.users.urls')),
+    path("api/", include("apps.posts.urls")),
+    path("api/", include("apps.comments.urls")),
+    path("api/", include("apps.portfolio.urls")),
+    path("api/", include("apps.groups.urls")),
+
+
+
+
 ]

@@ -1,3 +1,13 @@
-from django.shortcuts import render
+from rest_framework import viewsets, permissions
+from .models import Group
+from .serializers import GroupSerializer
 
-# Create your views here.
+
+class GroupViewSet(viewsets.ModelViewSet):
+    queryset = Group.objects.all()
+    serializer_class = GroupSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def perform_create(self, serializer):
+        group = serializer.save(owner=self.request.user)
+        group.members.add(self.request.user)
