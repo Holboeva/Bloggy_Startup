@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'apps.comments',
     'apps.groups',
     'apps.portfolio',
-    'apps.posts'
+    'apps.posts',
+    'apps.explore',
 
 
 ]
